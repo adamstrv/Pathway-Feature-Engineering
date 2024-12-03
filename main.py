@@ -46,21 +46,21 @@ def simulation(r1:float, r2:float):
         # See if K1 is activated and obtain output
         K1_output = K1.activate()
 
-        # Make case for interaction between K1 and P1
-        # Define phosphatase 1, P1
-        P1 = Phosphatase(name='P1', input=K1_output)
-        # See if P1 is activated and obtain output
-        P1_output = P1.activate()
-
         # Make case for interaction between K1 and K2
         # Define kinase 2, K2
         K2 = Kinase2(name='K2', input=K1_output)
         # See if K2 is activated and obtain output
         K2_output = K2.activate()
         
+        # Make case for interaction between K1 and P1
+        # Define phosphatase 1, P1
+        P1 = Phosphatase(name='P1', input=K1_output)
+        # See if P1 is activated and obtain output
+        P1_output = P1.activate()
+        
         # Make case for interaction between P1 and K3
         # Define kinase 3, K3
-        K3 = Kinase2(name='K3', input=P1_output)
+        K3 = Kinase3(name='K3', input=P1_output)
         # See if K3 is activated and obtain output
         K3_output = K3.activate()
 

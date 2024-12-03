@@ -1,5 +1,5 @@
 
 from main import simulation
 
-apoptosis = simulation(0.4, 0.7)
+apoptosis = simulation(0.5, 0.8)
 print(apoptosis)
