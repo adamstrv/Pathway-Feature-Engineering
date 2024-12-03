@@ -10,7 +10,7 @@ from complexc import ComplexC
 from apoptosisa import ApoptosisA
 
 # Code signal pathway
-def simulation(r1, r2):
+def simulation(r1:float, r2:float):
     """
     Models a signaling pathway between macromolecular entities. Each element in the pathway contributes a signal of a given 
     strength to the next element, potentially leading to cell apoptosis. The downstream element (apoptosis)
