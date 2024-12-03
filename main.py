@@ -73,12 +73,12 @@ def simulation(r1:float, r2:float):
         # Define complex A, A
         A = ApoptosisA(name='A', input=C_output)
         # See if A is activated and obtain   
-        A_output = A.activate()
+        apoptosis = A.activate()
 
         # Make list of outputs to check whether apoptosis will take place
         outputs = [R1_output, R2_output, K1_output, K2_output, K3_output, P1_output, C_output, A_output]
         if 0 in outputs:
-            A_output = False
-        return A_output, print(A_output)
+            apoptosis = False
+        return apoptosis, print(apoptosis)
 
 
