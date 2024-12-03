@@ -20,5 +20,5 @@ class Phosphatase(SignalingEntities):
         # Still make case for unactivation to reduce error sensibility
         elif not (self.input > threshold) and self.input > 0:
             self.output = 0
-            print("Error: The signal from K1 is not big enough for the phosphotase (1) to breach through to the next signal.")
+            print("The signal from K1 is not big enough for the phosphotase (1) to breach through to the next signal.")
         return self.output

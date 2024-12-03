@@ -20,7 +20,7 @@ class ComplexC(SignalingEntities):
         # Print error message only when necessary
         elif not (min_input > threshold) and self.inputK2 > 0 and self.inputK3 > 0:
             self.output = 0
-            print(f"Error: The values of K2 ({self.inputK2:.2f}) and K3 ({self.inputK3:.2f}) do not both exceed the threshold.")
+            print(f"The values of K2 ({self.inputK2:.2f}) and K3 ({self.inputK3:.2f}) do not both exceed the threshold.")
             print(f"One of the two inputs needs to exceed {threshold:.2f}.")
         return self.output
     

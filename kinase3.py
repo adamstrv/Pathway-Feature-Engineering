@@ -17,5 +17,5 @@ class Kinase3(SignalingEntities):
         # Print error message only when unnecessary
         elif not (self.input > threshold) and self.input > 0:
             self.output = 0
-            print("Error: The signal from P1 is not big enough for the kinase (K3) to breach through to the next signal.")
+            print("The signal from P1 is not big enough for the kinase (K3) to breach through to the next signal.")
         return self.output
