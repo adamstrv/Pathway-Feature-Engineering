@@ -76,7 +76,7 @@ def simulation(r1:float, r2:float):
         apoptosis = A.activate()
 
         # Make list of outputs to check whether apoptosis will take place
-        outputs = [R1_output, R2_output, K1_output, K2_output, K3_output, P1_output, C_output, A_output]
+        outputs = [R1_output, R2_output, K1_output, K2_output, K3_output, P1_output, C_output, apoptosis]
         if 0 in outputs:
             apoptosis = False
         return apoptosis, print(apoptosis)
