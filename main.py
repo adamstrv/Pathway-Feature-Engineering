@@ -20,7 +20,7 @@ def simulation(r1:float, r2:float):
     Input: external stimuli r1 and r2 (floats)
     Output: occurrence of apoptosis (boolean)
     """
-    if not isinstance(r1, (float, int)) or not isinstance(r2, (float, int)):
+    if not isinstance(r1, (float)) or not isinstance(r2, (float)):
         print('Error: Input type external stimuli must be float')
         return 
     
@@ -45,6 +45,7 @@ def simulation(r1:float, r2:float):
         K1 = Kinase1(name='K1', input1=R1_output, input2=R2_output)
         # See if K1 is activated and obtain output
         K1_output = K1.activate()
+
         # Make case for interaction between K1 and P1
         # Define phosphatase 1, P1
         P1 = Phosphatase(name='P1', input=K1_output)
