@@ -12,10 +12,13 @@ class ApoptosisA(SignalingEntities):
 
     def activate(self, threshold:float=0.1):
         # Activate kinase if C signal breaches threshold
+
         if self.inputC > threshold:
-            self.output = self.inputC
-        # Print error message only when unnecessary
+            self.output = True
+            print(self.output)
+        # Print error message only when necessary
         elif not (self.inputC > threshold) and self.input > 0:
-            self.output = 0
+            self.output = False
+            print(self.output)
             print("Error: The signal from C is not big enough for the Apoptose (A) to breach through to the next signal.")
         return self.output
