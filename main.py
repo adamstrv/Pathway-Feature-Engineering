@@ -5,6 +5,9 @@ from receptors import Receptor
 from kinase1 import Kinase1
 from phosphatase1 import Phosphatase
 from kinase2 import Kinase2
+from kinase3 import Kinase3
+from complexc import ComplexC
+from apoptosisa import ApoptosisA
 
 # Code signal pathway
 def simulation(r1, r2):
@@ -48,7 +51,24 @@ def simulation(r1, r2):
     K2 = Kinase2(name='K2', input=K1_output)
     # See if K2 is activated and obtain output
     K2_output = K2.activate()
+    
+    # Make case for interaction between P1 and K3
+    # Define kinase 3, K3
+    K3 = Kinase2(name='K3', input=P1_output)
+    # See if K3 is activated and obtain output
+    K3_output = K3.activate()
 
-
+    # Make case for interaction between K2, K3 and C
+    # Define complex C, C
+    C = ComplexC(name='C', input1=K2_output, input2=K3_output)
+    # See if C is activated and obtain     
+    C_output = C.activate()
+    
+    # Make case for interaction between C and A
+    # Define complex A, A
+    A = ApoptosisA(name='A', input=C_output)
+    # See if A is activated and obtain   
+    A_output = A.activate()
+    
 simulation(0.6, 0.6)
 
