@@ -13,14 +13,14 @@ class ComplexC(SignalingEntities):
     
     def activate(self, threshold: float = 0.15):
         # Set conditions for activation
-        if self.inputK2 > threshold and self.inputK3 > threshold:
-            self.output = (self.inputK2,self.inputK3)
-            #testing check
-            print(self.output)
-        # Print error message only when unnecessary
-        elif not (self.inputK2 > threshold and self.inputK3 > threshold) and self.inputK2 > 0 and self.inputK3 > 0:
+        min_input = min(self.inputK2, self.inputK3)
+        if min_input > threshold:
+            self.output = min_input
+
+        # Print error message only when necessary
+        elif not (min_input > threshold) and self.inputK2 > 0 and self.inputK3 > 0:
             self.output = 0
             print(f"Error: The values of K2 ({self.inputK2:.2f}) and K3 ({self.inputK3:.2f}) do not both exceed the threshold.")
-            print(f"Needs to be a minimal of {threshold:.2f}.")
+            print(f"One of the two inputs needs to exceed {threshold:.2f}.")
         return self.output
     
