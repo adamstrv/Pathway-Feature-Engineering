@@ -24,6 +24,8 @@ def simulation(r1:float, r2:float):
         print('Error: Input type external stimuli must be float')
         return 
     
+    
+    
     else:
         # Make case for interaction between R1 and R2 receptors and input stimuli 
         # Define receptor 1 and 2
@@ -35,10 +37,12 @@ def simulation(r1:float, r2:float):
         R2_output = R2.activate()
 
         # Print error message if R1 and R2 are =< 0
-        if R1_output <= 0:
-            print("Error: Unvalid input stimulation provided for R1")
-        if R2_output <= 0:
-            print("Error: Unvalid input stimulation provided for R2")
+        if R1_output < 0 or R1_output > 1:
+            print("Error: Invalid input stimulation provided for R1")
+            return
+        if R2_output < 0 or R2_output > 1:
+            print("Error: Invalid input stimulation provided for R2")
+            return
 
         # Make case for interaction between R1, R2 and K1
         # Define kinase 1, K1
