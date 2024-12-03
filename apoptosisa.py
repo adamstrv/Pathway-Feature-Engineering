@@ -17,7 +17,7 @@ class ApoptosisA(SignalingEntities):
             self.output = True
             print(self.output)
         # Print error message only when necessary
-        elif not (self.inputC > threshold) and self.input > 0:
+        elif not (self.inputC > threshold) and self.inputC > 0:
             self.output = False
             print(self.output)
             print("Error: The signal from C is not big enough for the Apoptose (A) to breach through to the next signal.")

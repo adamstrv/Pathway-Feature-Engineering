@@ -70,5 +70,5 @@ def simulation(r1, r2):
     # See if A is activated and obtain   
     A_output = A.activate()
     
-simulation(0.6, 0.6)
+simulation(0.6, 0.4)
 
