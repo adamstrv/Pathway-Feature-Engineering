@@ -33,6 +33,7 @@ def simulation(r1:float, r2:float):
         # See if R1 and R2 are activated and obtain their outputs
         R1_output = R1.activate()
         R2_output = R2.activate()
+
         # Print error message if R1 and R2 are =< 0
         if R1_output <= 0:
             print("Error: Unvalid input stimulation provided for R1")
@@ -44,7 +45,6 @@ def simulation(r1:float, r2:float):
         K1 = Kinase1(name='K1', input1=R1_output, input2=R2_output)
         # See if K1 is activated and obtain output
         K1_output = K1.activate()
-
         # Make case for interaction between K1 and P1
         # Define phosphatase 1, P1
         P1 = Phosphatase(name='P1', input=K1_output)
@@ -73,12 +73,12 @@ def simulation(r1:float, r2:float):
         # Define complex A, A
         A = ApoptosisA(name='A', input=C_output)
         # See if A is activated and obtain   
-        apoptosis = A.activate()
-
+        A_output = A.activate()
+        
         # Make list of outputs to check whether apoptosis will take place
-        outputs = [R1_output, R2_output, K1_output, K2_output, K3_output, P1_output, C_output, apoptosis]
+        outputs = [R1_output, R2_output, K1_output, K2_output, K3_output, P1_output, C_output, A_output]
         if 0 in outputs:
-            apoptosis = False
-        return apoptosis, print(apoptosis)
+            A_output = False
+        return A_output
 
 
