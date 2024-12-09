@@ -22,10 +22,8 @@ def simulation(r1:float, r2:float):
     """
     if not isinstance(r1, (float)) or not isinstance(r2, (float)):
         print('Error: Input type external stimuli must be float')
-        return 
-    
-    
-    
+        return
+          
     else:
         # Make case for interaction between R1 and R2 receptors and input stimuli 
         # Define receptor 1 and 2

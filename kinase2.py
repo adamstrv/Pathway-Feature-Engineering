@@ -12,7 +12,6 @@ class Kinase2(SignalingEntities):
 
     def activate(self, threshold:float=0.2):
         # Activate kinase if K1 signal breaches threshold
- 
         if self.input > threshold:
             self.output = self.input + threshold
         elif (self.input < threshold) and self.input > 0:
