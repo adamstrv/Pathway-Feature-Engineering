@@ -15,8 +15,6 @@ class Kinase2(SignalingEntities):
  
         if self.input > threshold:
             self.output = self.input + threshold
-        # Print error message only when unnecessary
         elif (self.input < threshold) and self.input > 0:
             self.output = 0
-            print("The signal from K1 is not big enough for the kinase (K2) to breach through to the next signal.")
         return self.output

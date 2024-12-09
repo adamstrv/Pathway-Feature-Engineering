@@ -14,8 +14,6 @@ class Kinase3(SignalingEntities):
         # Activate kinase if P1 signal breaches threshold
         if self.input > threshold:
             self.output = self.input - threshold
-        # Print error message only when unnecessary
         elif not (self.input > threshold) and self.input > 0:
             self.output = 0
-            print("The signal from P1 is not big enough for the kinase (K3) to breach through to the next signal.")
         return self.output

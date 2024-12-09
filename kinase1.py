@@ -18,9 +18,6 @@ class Kinase1(SignalingEntities):
         # Set conditions for activation
         if sum_inputs > threshold:
             self.output = sum_inputs
-        # Print error message only when unnecessary
         elif not (sum_inputs > threshold) and self.input1 > 0 and self.input2 > 0:
             self.output = 0
-            print(f"The stimuli which have the sum of value {sum_inputs:.2f} is not big enough to breach to the next signal via K1.")
-            print(f"Needs to be a bigger than {threshold:.2f}.")
         return self.output
